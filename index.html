@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form id="accessibleForm" onsubmit="return handleSubmit(event)">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        aria-describedby="firstNameError"
+        aria-required="true"
+        aria-invalid="false"
+        oninput="validateFieldFirstName()"
+        aria-placeholder="Please enter firstName"
+        placeholder="Please enter firstName"
+      />
+      <span
+        id="firstNameError"
+        class="error-message"
+        aria-live="assertive"
+        hidden
+      ></span>
+
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        aria-describedby="lastNameError"
+        aria-required="true"
+        aria-invalid="false"
+        oninput="validateFieldLastName()"
+        aria-placeholder="Please enter lastName"
+        placeholder="Please enter lastName"
+      />
+      <span
+        id="lastNameError"
+        class="error-message"
+        aria-live="assertive"
+        hidden
+      ></span>
+
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        aria-describedby="emailError"
+        aria-required="true"
+        aria-invalid="false"
+        oninput="validateFieldEmail()"
+        aria-placeholder="Please enter email"
+        placeholder="Please enter email"
+      />
+      <span
+        id="emailError"
+        class="error-message"
+        aria-live="assertive"
+        hidden
+      ></span>
+
+      <button type="submit">Submit</button>
+    </form>
+    <script src="./main.js"></script>
+  </body>
+</html>
